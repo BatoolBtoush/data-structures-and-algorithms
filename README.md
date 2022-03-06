@@ -1,1 +1,1 @@
-# data-structures-and-algorithms
+- [Class 03: array-binary-search](code_challenge_class_03_array_binary_search/README.md)
