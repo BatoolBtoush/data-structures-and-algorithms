@@ -20,13 +20,14 @@ class LinkedList:
     - This class takes care of building a chain of nodes with the help of the Node class.
     - The __init__ method only determins the head node as it is the first entery point to any linked list,
     and since the linked list hasn't been created yet, then it's set to None.
-// Input ← a matrix which is basically a list that contains lists
-// Output ←a list of the summation values of each row in a 
     - The __str__ method shows a better visual of the linked list.
     - When appending or inserting into the linked list, the first entery point that through it I can do
     the functionality of those methods is the head, so I have to start from there, and end right before
     the None that the last node in the linked list points to when I'm appending.
-
+    -methods:
+    append
+    insert_after
+    insert_after
     """
 
     def __init__(self):
