@@ -33,8 +33,6 @@ class LinkedList:
     - The to_string method is just another visual repersentaion
     - The includes method is just there to check if a certain value is present in the linked list or not.
 
-    - I also added an additional method (display) that would return a collection or list of the existing
-    items in the linked list
 
      - When appending or inserting into the linked list, the first entery point that through it I can do
     the functionality of those methods is the head, so I have to start from there, and end right before
@@ -54,7 +52,7 @@ class LinkedList:
 
     def __str__(self):
 
-        output = ""
+        output = "Head -> "
         if self.head is None:
             output = "Empty linked list"
         else:
@@ -65,6 +63,14 @@ class LinkedList:
 
             output += "None"
         return output
+
+
+    def insert(self, node):
+        if self.head is None:
+            self.head = node
+        else:
+            node.next = self.head
+            self.head = node
 
     def append(self, node):
         if self.head is None:
@@ -122,20 +128,19 @@ class LinkedList:
     def length(self):
         current = self.head
         total = 0
-        while current.next is not None:
+        while current is not None:
             total +=1
             current = current.next
-        return total
+        
+        return total 
    
 
     def find_kth(self,k):
         first_pointer = self.head
         second_pointer = self.head
 
-        if k > self.length():
-            print('out of range')
-        
-        if k <= self.length():
+
+        if k >= 0 and k < self.length():
             for i in range(k):
                 second_pointer = second_pointer.next
             while second_pointer.next is not None:
@@ -143,32 +148,22 @@ class LinkedList:
                 first_pointer = first_pointer.next
             return first_pointer.value
         
-        if k <0:
-            raise Exception("The kth input is of negative value, please privde a positive one!")
+        if k > self.length():
+            return ('The kth value is out of range')
+        
+        if  k < 0 and k < self.length():
+            return ('The kth value is of negative value, please provide a positive one!')
 
         if type(k) != int:
-            raise Exception("The kth input is not an integer, please privde an int value!")
+            return ('The kth value is not an integer, please provide an int value!')
         
          
-
-    
 
     def to_string(self):
         return self.__str__()
         # return f'{self.head} -> {self.head.next} -> {self.head.next.next} -> {self.head.next.next.next} -> {self.head.next.next.next.next} -> {self.head.next.next.next.next.next}'
 
-    def display(self):
-        """
-        This method is to show a collection of every element in the linked list
-        and I'm testing it in the test_linked_list.py file
-        """
-        collection = []
-        current = self.head
-        while current != None:
-            collection.append(current.value)
-            current = current.next
-        return collection
-
+   
 
 if __name__ == "__main__":
     # bat = Node("Bat")
@@ -187,16 +182,24 @@ if __name__ == "__main__":
     btoush = Node("Btoush")
     one = Node("number 1")
     two = Node("number 2")
-    ll.append(batool)
-    ll.append(yahia)
-    ll.append(btoush)
-    ll.append(one)
+    # ll.append(batool)
+    # ll.append(yahia)
+    # ll.append(btoush)
+    # ll.append(one)
+    # ll.append(two)
+    # ll.insert(btoush)
+    # ll.insert(yahia)
+    ll.insert(btoush)
+    ll.insert(yahia)
+    ll.insert(batool)
+
     ll.append(two)
 
     # print(ll.to_string())
     print(ll.__str__())
     # print(ll.includes("Batool"))
     # print(ll.includes("one"))
+    # print(ll.length())
     print(ll.find_kth(2))
     # print(one)
     # print(ll.display())
