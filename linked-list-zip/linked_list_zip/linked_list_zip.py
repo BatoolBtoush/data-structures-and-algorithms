@@ -24,6 +24,10 @@ class LinkedList:
     - When appending or inserting into the linked list, the first entery point that through it I can do
     the functionality of those methods is the head, so I have to start from there, and end right before
     the None that the last node in the linked list points to when I'm appending.
+    - zip_lists methods, that takes two input arguments:
+      linked list 1 and linked list 2
+      output the zipped or merged linked list of the two combined into one, after adjusting
+      the next pointers.
 
     """
 
