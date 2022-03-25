@@ -1,4 +1,3 @@
-
 class Node:
     """
     - This class is the first step when creating a custom linked list
@@ -26,11 +25,7 @@ class LinkedList:
     - When appending or inserting into the linked list, the first entery point that through it I can do
     the functionality of those methods is the head, so I have to start from there, and end right before
     the None that the last node in the linked list points to when I'm appending.
-    - The to_string method is just another visual repersentaion
-    - The includes method is just there to check if a certain value is present in the linked list or not.
-
-    - I also added an additional method (display) that would return a collection or list of the existing
-    items in the linked list
+    - the reverse_linked_list method is to reverse the linked list and return it in its new form
 
     """
 
@@ -68,11 +63,10 @@ class LinkedList:
             node.next = self.head
             self.head = node
 
-
     def insert_before(self, node, newnode):
         if self.head is None:
             self.head = node
-                
+
         current = self.head
         if current.value == node.value:
             newnode.next = current
@@ -83,20 +77,19 @@ class LinkedList:
             if current.next.value == node.value:
                 newnode.next = current.next
                 current.next = newnode
-                return 
+                return
             current = current.next
-
 
     def insert_after(self, node, newnode):
         if self.head is None:
             self.head = node
-                
+
         current = self.head
         while current is not None:
             if current.value == node.value:
                 newnode.next = current.next
                 current.next = newnode
-                return 
+                return
             current = current.next
 
     def reverse_linked_list(self):
@@ -111,23 +104,31 @@ class LinkedList:
         # and set the new head node to the previous node
         self.head = previous
 
-    
+
 if __name__ == "__main__":
     ll = LinkedList()
+    # batool = Node("Batool")
+    # yahia = Node("Yahia")
+    # btoush = Node("Btoush")
+    # loves = Node("loves")
+    # music = Node("music")
+
+    # ll.insert(btoush)
+    # ll.insert(yahia)
+    # ll.insert(batool)
+    # ll.append(loves)
+    # ll.append(music)
     batool = Node("Batool")
     yahia = Node("Yahia")
     btoush = Node("Btoush")
-    loves = Node("loves")
-    music = Node("music")
-
-    ll.insert(btoush)
-    ll.insert(yahia)       
-    ll.insert(batool)
-    ll.append(loves)
-    ll.append(music)
+    star = Node("*")
+    ll.append(star)
+    ll.append(btoush)
+    ll.append(yahia)
+    ll.append(batool)
 
     # before reversing the linked list
-    print("** Before reversing the linked list: **",ll.__str__())
+    print("** Before reversing the linked list: **", ll.__str__())
     ll.reverse_linked_list()
     # after reversing the linked list
-    print("** After reversing the linked list: **",ll.__str__())
+    print("** After reversing the linked list: **", ll.__str__())
