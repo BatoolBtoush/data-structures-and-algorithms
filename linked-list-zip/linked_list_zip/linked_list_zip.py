@@ -24,10 +24,6 @@ class LinkedList:
     - When appending or inserting into the linked list, the first entery point that through it I can do
     the functionality of those methods is the head, so I have to start from there, and end right before
     the None that the last node in the linked list points to when I'm appending.
-    - zip_lists methods, that takes two input arguments:
-      linked list 1 and linked list 2
-      output the zipped or merged linked list of the two combined into one, after adjusting
-      the next pointers.
 
     """
 
@@ -96,29 +92,36 @@ class LinkedList:
 
 
 def zip_lists(list1, list2):
+    """
+    zip_lists function, takes two input arguments:
+      linked list 1 and linked list 2
+      output the zipped or merged linked list of the two combined into one, after adjusting
+      the next pointers.
+    """
+    
         # initiate the start of each linked list
-        list1_current = list1.head
-        list2_current = list2.head
+    list1_current = list1.head
+    list2_current = list2.head
 
         # swap between the two linked lists
-        while list1_current != None and list2_current != None:
+    while list1_current != None and list2_current != None:
 
             # save next pointers
-            list1_next = list1_current.next
-            list2_next = list2_current.next
+        list1_next = list1_current.next
+        list2_next = list2_current.next
 
             # change next pointers
-            list2_current.next = list1_next
-            list1_current.next = list2_current
+        list2_current.next = list1_next
+        list1_current.next = list2_current
 
             # update current pointers for next iteration
-            list1_current = list1_next
-            list2_current = list2_next
+        list1_current = list1_next
+        list2_current = list2_next
 
         # exit out of the while loop once current value of any linked list is equal to none
         # which means when one linked list is shorter than the other
-        list1.append(list2_current)
-        return list1
+    list1.append(list2_current)
+    return list1
 
 
 

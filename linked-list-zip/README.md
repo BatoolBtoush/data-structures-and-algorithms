@@ -1,6 +1,6 @@
 # Challenge Summary
 
-You're asked to write a zip_lists method inside the LinkedList class, that takes two arguments of two linked lists and the aim is to zip them or merge them together. While returning the resulting zipped list.
+You're asked to write a zip_lists function that takes two arguments of two linked lists and the aim is to zip them or merge them together. While returning the resulting zipped list.
 
 **input**: linked list 1, linked list 2
 
