@@ -8,3 +8,4 @@
 - [Class 05: Linked List Implementation](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list/README.md)
 - [Class 06: Linked List Insertions](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list-insertions/README.md)
 - [Class 07: Linked List Kth](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list-kth/README.md)
+- [Class 08: Linked List Zip](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list-zip/README.md)
