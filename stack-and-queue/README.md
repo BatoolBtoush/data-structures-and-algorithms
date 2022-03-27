@@ -76,44 +76,26 @@ Create a Queue class that has a front and a rear property, and the following met
 
 ## Approach & Efficiency
 
-~ The push method: O(1)
+The **approach** was to create several methods inside each class, and those methods were to add, delete and ispect nodes from the stack and queue.
+
+While of course considering the difference between the stack and queue in how or where to add the nodes and from where to delete.
 
 <br>
 
+The **big O** in the stack's methods:
+1. The push method: O(1)
+2. The pop method: O(1)
+3. The peek method: O(1)
 
-~ The pop method: O(1)
+Because it doesn't matter how many nodes are in the stack (n), as these previous methods always take the same amount of time to perform the operation.
 
-<br>
+The big O in the queue's methods:
+1. The enqueue method: O(1)
+2. The dequeue method: O(1)
+3. The peek method: O(1)
 
-~ The peek method: O(1)
+Because it doesn't matter how many nodes are in the queue (n), as these previous methods always take the same amount of time to perform the operation.
 
-This method is for inspecting the top node of the stack.
-
-<br>
-
-~ The isEmpty method:
-
-This method returns a True or False, based on the existance of a top node or not. (empty stack or not).
-
-<br>
-
-~ The enqueue method: O(1)
- 
-<br>
-
-~ The dequeue method: O(1)
-
-<br>
-
-~ The peek method: O(1)
-
-This method is for inspecting the front node of the queue.
-
-<br>
-
-~ The isEmpty method:
-
-This method returns a True or False, based on the existance of a top node or not. (empty queue or not).
 
 <br>
 
