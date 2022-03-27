@@ -1,5 +1,5 @@
 import pytest
-from linked_list_zip.linked_list_zip import LinkedList, Node
+from linked_list_zip.linked_list_zip import LinkedList, Node, zip_lists
 
 # test 1: if linked list 1 is empty
 def test_if_llist_is_empty():
@@ -15,7 +15,7 @@ def test_if_llist_is_empty():
     llist2.insert(emily)
 
     # merging
-    llist1.zip_lists(llist1, llist2)
+    zip_lists(llist1, llist2)
 
     expected = "Daisy -> Adam -> JB -> None"
     actual = llist1.__str__()
@@ -36,7 +36,7 @@ def test_if_llist2_is_empty():
     llist1.insert(batool)
 
     # merging
-    llist1.zip_lists(llist1, llist2)
+    zip_lists(llist1, llist2)
 
     expected = "Batool -> Yahia -> Btoush -> None"
     actual = llist1.__str__()
@@ -65,7 +65,7 @@ def test_if_the_two_linked_lists_are_of_the_same_length():
     llist2.insert(emily)
 
     # merging
-    llist1.zip_lists(llist1, llist2)
+    zip_lists(llist1, llist2)
 
     expected = "Batool -> Daisy -> Yahia -> Adam -> Btoush -> JB -> None"
     actual = llist1.__str__()
@@ -96,7 +96,7 @@ def test_if_llist1_is_longer_than_llist2():
     llist2.insert(emily)
 
     # merging
-    llist1.zip_lists(llist1, llist2)
+    zip_lists(llist1, llist2)
 
     expected = "Batool -> Daisy -> Yahia -> Adam -> Btoush -> JB -> number 1 -> None"
     actual = llist1.__str__()
@@ -123,7 +123,7 @@ def test_if_llist1_is_shorter_than_llist2():
     llist2.insert(emily)
 
     # merging
-    llist1.zip_lists(llist1, llist2)
+    zip_lists(llist1, llist2)
 
     expected = "Batool -> Daisy -> Btoush -> Adam -> JB -> None"
     actual = llist1.__str__()

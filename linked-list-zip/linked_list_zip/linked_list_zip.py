@@ -94,7 +94,8 @@ class LinkedList:
                 return
             current = current.next
 
-    def zip_lists(self, list1, list2):
+
+def zip_lists(list1, list2):
         # initiate the start of each linked list
         list1_current = list1.head
         list2_current = list2.head
@@ -117,6 +118,8 @@ class LinkedList:
         # exit out of the while loop once current value of any linked list is equal to none
         # which means when one linked list is shorter than the other
         list1.append(list2_current)
+        return list1
+
 
 
 if __name__ == "__main__":
@@ -162,7 +165,6 @@ if __name__ == "__main__":
     # llist2.insert(num4)
     # llist2.insert(num9)
     # llist2.insert(num5)
-
-    llist1.zip_lists(llist1, llist2)
-    print(llist1.__str__())
+    print(zip_lists(llist1, llist2))
+    # print(llist1.__str__())
     # print(llist2.__str__())
