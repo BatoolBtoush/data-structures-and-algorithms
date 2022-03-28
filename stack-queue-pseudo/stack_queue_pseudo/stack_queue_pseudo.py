@@ -77,21 +77,28 @@ class Stack:
         return self.top == None
 
 
+class PseudoQueue:
 
-class PseudoQueue():
+    """
+    This class implement a Queue using two stacks and utilizing 2 Stack instances to create
+    and manage the queue.
+
+    input: self, nodes
+    output : return popped node from stack2
+
+    Methods:
+        enqueue: has an arguments of a node and it inserts this node into the PseudoQueue class.
+        dequeue: has no arguments it only extracts the node from the PseudoQueue class.
+    """
+
     def __init__(self):
         self.stack1 = Stack()
         self.stack2 = Stack()
 
-
-    def enQueue(self, node):
+    def enqueue(self, node):
         self.stack1.push(node)
 
-    def deQueue(self):
-        # if self.stack2.is_empty == True:
-        #     self.stack2(self.stack1.pop())
-        # return self.stack2.pop()
-            
+    def dequeue(self):
         if not self.stack2.is_empty():
             self.stack2.push(self.stack1.pop())
 
@@ -100,11 +107,6 @@ class PseudoQueue():
 
         if self.stack2.is_empty():
             raise Exception("Stack 2 is empty!")
-
-
-
-
-
 
 
 if __name__ == "__main__":
@@ -116,30 +118,11 @@ if __name__ == "__main__":
     yahia = Node("Yahia")
     btoush = Node("Btoush")
 
-    # pushing nodes to an empty stack
-    # stack.push(btoush)
-    # stack.push(yahia)
-    # stack.push(bat)
-
-    # # poping a node from a stack
-    # # print(stack.__str__())
-    # # print(stack.pop())
-    # print(stack.__str__())
-
-    # # peeking at the top node
-    # print(stack.peek())
-
-    # # is the stack empty?
-    # print(stack.is_empty())
-
-    ###################################################################################################    
-
+    ###################################################################################################
     pseudoqueue = PseudoQueue()
 
-    pseudoqueue.enQueue(btoush)
-    pseudoqueue.enQueue(yahia)
-    pseudoqueue.enQueue(bat)
-    
-    print(pseudoqueue.deQueue())
+    pseudoqueue.enqueue(btoush)
+    pseudoqueue.enqueue(yahia)
+    pseudoqueue.enqueue(bat)
 
-    
+    print(pseudoqueue.dequeue())
