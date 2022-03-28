@@ -10,3 +10,5 @@
 - [Class 07: Linked List Kth](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list-kth/README.md)
 - [Class 08: Linked List Zip](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/linked-list-zip/README.md)
 - [Class 09: Mock Interviews, reverse a linked list](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/reverse-linked-list/README.md) 
+- [Class 10: Stack and Queue](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-and-queue/stack-and-queue/README.md)
+- [Class 11: Stack Queue Pseudo](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-pseudo/stack-queue-pseudo/README.md)
