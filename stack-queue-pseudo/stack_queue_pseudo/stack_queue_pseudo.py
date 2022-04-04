@@ -94,6 +94,8 @@ class PseudoQueue:
     def __init__(self):
         self.stack1 = Stack()
         self.stack2 = Stack()
+        self.front = None
+        self.rear = None
 
     def __str__(self):
         output = ""
@@ -108,24 +110,30 @@ class PseudoQueue:
         return output
 
     def enqueue(self, node):
+
         self.stack1.push(node)
+        
+        if self.stack2.is_empty():
+            while not self.stack1.is_empty():
+                self.stack2.push(self.stack1.pop())
+                 
 
     def dequeue(self):
+        current = self.stack2.top
         if not self.stack2.is_empty():
-            self.stack2.push(self.stack1.pop())
+            return current
             
-        if not self.stack1.is_empty():
-            return self.stack1.pop()
+        # if not self.stack1.is_empty():
+        #     return self.stack1.pop()
 
-        if self.stack2.is_empty():
-            raise Exception("Stack 2 is empty!")
+        # if self.stack2.is_empty():
+        #     raise Exception("Stack 2 is empty!")
+
             
 
 
 if __name__ == "__main__":
 
-    stack1 = Stack()
-    stack2 = Stack()
 
     # creating nodes
     bat = Node("Bat")
@@ -135,10 +143,11 @@ if __name__ == "__main__":
     ###################################################################################################
     
     pseudoqueue = PseudoQueue()
-
     pseudoqueue.enqueue(btoush)
     pseudoqueue.enqueue(yahia)
     pseudoqueue.enqueue(bat)
     print(pseudoqueue.__str__())
     print(pseudoqueue.dequeue())
     print(pseudoqueue.__str__())
+
+
