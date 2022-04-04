@@ -12,3 +12,6 @@
 - [Class 09: Mock Interviews, reverse a linked list](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/reverse-linked-list/README.md) 
 - [Class 10: Stack and Queue](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-and-queue/stack-and-queue/README.md)
 - [Class 11: Stack Queue Pseudo](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-pseudo/stack-queue-pseudo/README.md)
+- [Class 12: Stack Queue Animal Shelter](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-animal-shelter/animal-shelter/README.md)
+- [Class 13: Stack Queue Brackets](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-brackets/stack-queue-brackets/README.md)
+
