@@ -61,7 +61,6 @@ class AnimalShelter:
 
 
 if __name__ == "__main__":
-    queue = Queue()
 
     animal_shelter = AnimalShelter()
 
