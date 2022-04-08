@@ -95,7 +95,7 @@ class PseudoQueue:
         self.stack1 = Stack()
         self.stack2 = Stack()
         self.front = None
-        self.rear = None
+        self.rear = None 
 
     def __str__(self):
         output = ""
@@ -116,18 +116,26 @@ class PseudoQueue:
         if self.stack2.is_empty():
             while not self.stack1.is_empty():
                 self.stack2.push(self.stack1.pop())
+
+                
                  
 
     def dequeue(self):
-        current = self.stack2.top
-        if not self.stack2.is_empty():
-            return current
+        # current = self.stack2.top
+        # if not self.stack2.is_empty():
+        #     return current
             
-        # if not self.stack1.is_empty():
-        #     return self.stack1.pop()
+        if not self.stack1.is_empty():
+            return self.stack1.pop()
 
         # if self.stack2.is_empty():
         #     raise Exception("Stack 2 is empty!")
+
+        if self.stack2.is_empty():
+            while not self.stack1.is_empty():
+                self.stack2.push(self.stack1.pop())
+
+        return self.stack2.pop()
 
             
 

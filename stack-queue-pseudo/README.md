@@ -12,7 +12,11 @@ dequeue
 
 ## Whiteboard Process
 
-![stack queue pseudo white board](assets/stack-queue-pseudo.jpg)
+![stack queue pseudo white board 1](assets/stack-queue-pseudo1.jpg)
+
+![stack queue pseudo white board 2](assets/stack-queue-pseudo2.jpg)
+
+
 
 <br>
 
@@ -24,7 +28,7 @@ Create 2 stacks with the help of Stack class, push nodes into stack1 and reverse
 
 whereas the enqueue method of PseudoQueue class will be pushing into stack1.
 
-And dequeue is popping from stack1, pushing into stack2, then popping one node by one and returning the last added node.
+And dequeue is popping from stack1, pushing into stack2, then popping one node by one and returning the first added node to the stack.
 
 <br>
 
