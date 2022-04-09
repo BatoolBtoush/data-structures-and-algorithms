@@ -16,7 +16,5 @@
 - [Class 12: Stack Queue Animal Shelter](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-animal-shelter/animal-shelter/README.md)
 - [Class 13: Stack Queue Brackets](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-brackets/stack-queue-brackets/README.md)
 - [Class 14: Mock Interviews, Max Stack](https://docs.google.com/spreadsheets/d/1zIoLHAcLFRrrLyXAw9YCAvDWZ6jiCI0dCpIKJeQd4SY/edit#gid=0)
-- [Class 14: Binary Trees and BST Implementation](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/trees/binary-tree/README.md)
-- 
-- 
+- [Class 15: Binary Trees and BST Implementation](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/trees/binary-tree/README.md)
 
