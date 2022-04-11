@@ -15,34 +15,52 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    
-    def pre_order(self,root):
+    def pre_order(self):
         stack = []
-        
-        if root:
-            stack.append(root.value)
-            stack = stack + self.pre_order(root.left)
-            stack = stack + self.pre_order(root.right)
-        return stack
-            
 
-    def in_order(self, root):
-        stack = []
-        
-        if root:
-            stack = stack + self.pre_order(root.left)
+        def _walk(root):
             stack.append(root.value)
-            stack = stack + self.pre_order(root.right)
+
+            if root.left:
+                _walk(root.left)
+            if root.right:
+                _walk(root.right)
+
+        _walk(self.root)
         return stack
 
+    def in_order(self):
 
-    def post_order(self, root):
         stack = []
-        
-        if root:
-            stack = stack + self.pre_order(root.left)
-            stack = stack + self.pre_order(root.right)
+
+        def _walk(root):
+
+            if root.left:
+                _walk(root.left)
+
             stack.append(root.value)
+
+            if root.right:
+                _walk(root.right)
+
+        _walk(self.root)
+        return stack
+
+    def post_order(self):
+
+        stack = []
+
+        def _walk(root):
+
+            if root.left:
+                _walk(root.left)
+
+            if root.right:
+                _walk(root.right)
+
+            stack.append(root.value)
+
+        _walk(self.root)
         return stack
 
 
@@ -62,18 +80,16 @@ if __name__ == "__main__":
     d = TreeNode("d")
     e = TreeNode("e")
     f = TreeNode("f")
-    g = TreeNode("g")
 
     a.left = b
     a.right = c
     b.left = d
     b.right = e
     c.left = f
-    c.right = g
+
+    BT.root = a
 
     print(a)
-    print(BT.pre_order(a))
-    print(BT.in_order(a))
-    print(BT.post_order(a))
-
-
+    print(BT.pre_order())
+    print(BT.in_order())
+    print(BT.post_order())
