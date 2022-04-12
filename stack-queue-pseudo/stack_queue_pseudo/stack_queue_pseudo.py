@@ -73,6 +73,15 @@ class Stack:
         else:
             return self.top.value
 
+    def length(self):
+        current = self.top
+        total = 0
+        while current is not None:
+            total += 1
+            current = current.next
+
+        return total
+
     def is_empty(self):
         return self.top == None
 
@@ -94,8 +103,6 @@ class PseudoQueue:
     def __init__(self):
         self.stack1 = Stack()
         self.stack2 = Stack()
-        self.front = None
-        self.rear = None 
 
     def __str__(self):
         output = ""
@@ -104,58 +111,77 @@ class PseudoQueue:
         else:
             current = self.stack1.top
             while current:
-                output += f"{current.value} -> " 
-                current=current.next
+                output += f"{current.value} -> "
+                current = current.next
             output += "None"
         return output
 
     def enqueue(self, node):
 
+        # if stack 1 is not empty, then empty its componenents into stack 2 by pushing them
+        # and after that, push into stack 1 the node normally
+        while not self.stack1.is_empty():
+            self.stack2.push(self.stack1.pop())
         self.stack1.push(node)
-        
-        if self.stack2.is_empty():
-            while not self.stack1.is_empty():
-                self.stack2.push(self.stack1.pop())
 
-                
-                 
+        # now get back all the elements from stack 2 into stack 1
+        while not self.stack2.is_empty():
+            self.stack1.push(self.stack2.pop())
 
     def dequeue(self):
-        # current = self.stack2.top
-        # if not self.stack2.is_empty():
-        #     return current
-            
-        if not self.stack1.is_empty():
+
+        if self.stack1.is_empty() and self.stack2.is_empty():
+            raise Exception("Empty Queue!")
+
+        elif self.stack2.is_empty():
+            while not self.stack1.is_empty():
+                return self.stack1.pop()
+
+        else:
             return self.stack1.pop()
 
-        # if self.stack2.is_empty():
-        #     raise Exception("Stack 2 is empty!")
+    # def __init__(self):
+    #     self.stack1 = []
+    #     self.stack2 = []
 
-        if self.stack2.is_empty():
-            while not self.stack1.is_empty():
-                self.stack2.push(self.stack1.pop())
+    # def enQueue(self, node):
 
-        return self.stack2.pop()
+    #     while len(self.stack1) != 0:
+    #         self.stack2.append(self.stack1[-1])
+    #         self.stack1.pop()
 
-            
+    #     self.stack1.append(node)
+
+    #     while len(self.stack2) != 0:
+    #         self.stack1.append(self.stack2[-1])
+    #         self.stack2.pop()
+
+    # def deQueue(self):
+
+    #     if len(self.stack1) == 0:
+    #         print("Q is Empty")
+
+    #     x = self.stack1[-1]
+    #     self.stack1.pop()
+    #     return x
 
 
 if __name__ == "__main__":
-
-
+    # stac = Stack()
     # creating nodes
     bat = Node("Bat")
     yahia = Node("Yahia")
     btoush = Node("Btoush")
+    # stac.push(bat)
+    # print(stac.length())
 
     ###################################################################################################
-    
+
     pseudoqueue = PseudoQueue()
     pseudoqueue.enqueue(btoush)
     pseudoqueue.enqueue(yahia)
-    pseudoqueue.enqueue(bat)
+    # pseudoqueue.enqueue(bat)
     print(pseudoqueue.__str__())
-    print(pseudoqueue.dequeue())
-    print(pseudoqueue.__str__())
-
-
+    # # print(pseudoqueue.dequeue())
+    # # print(pseudoqueue.__str__())
+    # print(pseudoqueue.deQueue())
