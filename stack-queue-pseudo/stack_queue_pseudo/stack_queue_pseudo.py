@@ -154,4 +154,9 @@ if __name__ == "__main__":
     print(pseudoqueue.stack1.top)
     print(pseudoqueue.stack2.top)
     print(pseudoqueue.dequeue())
+    print(pseudoqueue.__str__())
     print(pseudoqueue.dequeue())
+    print(pseudoqueue.__str__())
+    print(pseudoqueue.dequeue())
+    print(pseudoqueue.__str__())
+

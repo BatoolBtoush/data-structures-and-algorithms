@@ -1,4 +1,4 @@
-# Challenge Summary
+# **Challenge Summary**
 
 You're asked to implement a Queue using two stacks, by creating a new class called PseudoQueue and while utilizing 2 Stack instances to create and manage the queue.
 input: self, nodes
@@ -10,25 +10,38 @@ dequeue
 
 <br>
 
-## Whiteboard Process
+## **Whiteboard Process**
 
-![stack queue pseudo white board 1](assets/stack-queue-pseudo1.jpg)
+![stack queue pseudo white board 1](assets/stack-queue-pseudo2.jpg)
 
-![stack queue pseudo white board 2](assets/stack-queue-pseudo2.jpg)
+![stack queue pseudo white board 2](assets/stack-queue-pseudo1.jpg)
+
+
 
 
 
 <br>
 
-## Approach & Efficiency
+## **Approach & Efficiency**
 
 **The approach:**
 
-Create 2 stacks with the help of Stack class, push nodes into stack1 and reverse it in stack2.
+Create 2 stacks with the help of Stack class:
 
-whereas the enqueue method of PseudoQueue class will be pushing into stack1.
+Where the approach is First In First Out
 
-And dequeue is popping from stack1, pushing into stack2, then popping one node by one and returning the first added node to the stack.
+In the enqueue():
+
+- push a node into stack1 only when it's empty, but if stack 1 is not empty, then:
+
+- Pop the node from stack 1 and push into stack 2 temporarliy, until I'm done pushing the new nodes into stack 1.
+
+- After I'm done, then bring back the node from stak 2 into stack 1 by popping them and pushing.
+
+
+In the dequeue():
+
+- pop the top node from stack 1, which is what was first entered into the queue.
 
 <br>
 
@@ -36,18 +49,16 @@ And dequeue is popping from stack1, pushing into stack2, then popping one node b
 
 enqueue():
 
-- Time Complexity: O(1)
+- Time Complexity: O(n)
 - Space Complexity: O(1)
 
 dequeue():
 
-- Time Complexity: O(n)
+- Time Complexity: O(1)
 - Space Complexity: O(n)
 
 <br>
 
-## Solution
+## **Solution**
 
-enqueue() that takes a node input, and this method will push nodes to stack1. (adding using a first-in, first-out approach)
-
-dequeue() that will eventually remove nodes from stack2, by popping what was pushed into it from stack1 (using a first-in, first-out approach.)
+The solution is shown in ***stack_queue_pseudo.py*** and the testings are in ***test_stack_queue_pseudo.py***
