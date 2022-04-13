@@ -63,31 +63,23 @@ class BinaryTree:
         _walk(self.root)
         return stack
 
-    def breadth_first(self):
-        queue = []
-        queue.append(self.root)
 
-        # def _walk(root):
-        #     while queue:
-        #         popped = queue.pop(0)
-        #         print(popped.value)
 
-        #         if popped.left:
-        #             queue.append(popped.left)
-        #         if popped.right:
-        #             queue.append(popped.right)
+def breadth_first(tree):
+    queue = []
+    queue.append(tree.root)
 
-        # _walk(self.root)
-        # return queue
+    while queue:
+        popped = queue.pop(0)
+        print(popped.value)
 
-        while queue:
-            popped = queue.pop(0)
-            print(popped.value)
+        if popped.left:
+            queue.append(popped.left)
+        if popped.right:
+            queue.append(popped.right)
 
-            if popped.left:
-                queue.append(popped.left)
-            if popped.right:
-                queue.append(popped.right)
+    return queue
+    
 
 
 if __name__ == "__main__":
@@ -107,8 +99,8 @@ if __name__ == "__main__":
 
     BT.root = a
 
-    print(a)
-    print(BT.pre_order())
-    print(BT.in_order())
-    print(BT.post_order())
-    BT.breadth_first()
+    # print(a)
+    # print(BT.pre_order())
+    # print(BT.in_order())
+    # print(BT.post_order())
+    print(breadth_first(BT))
