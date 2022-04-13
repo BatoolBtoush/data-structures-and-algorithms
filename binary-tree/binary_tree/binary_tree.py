@@ -1,3 +1,6 @@
+from lib2to3.pytree import Node
+
+
 class TreeNode:
     def __init__(self, value):
         self.value = value
@@ -66,7 +69,16 @@ class BinaryTree:
 
 class BinarySearchClass:
     def add(self, value):
-        pass
+        if self.root is None:
+            self.root = Node(value)
+        else:
+            def _walk(value):
+            
+
+            _walk(value, self.root)
+
+
+
 
     def contains(self, value):
         pass
