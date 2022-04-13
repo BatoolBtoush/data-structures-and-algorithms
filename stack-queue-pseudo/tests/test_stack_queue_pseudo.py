@@ -6,16 +6,19 @@ def test_enqueue(pseudoqueue):
     pass
 
 
-# test 2: dequeuing from the queue
-def test_dequeue(pseudoqueue):
-    pseudoqueue.dequeue()
+# test 2: top of stack one
+def test_top_of_stack_one(pseudoqueue):
+    
+    actual = pseudoqueue.stack1.top.value
+    expected = "btoush"
+    assert actual == expected
 
 
 # test 3: return the dequeued node
 def test_print_popped_node_dequeue(pseudoqueue):
 
     actual = pseudoqueue.dequeue()
-    expected = "Bat"
+    expected = "btoush"
     assert actual == expected
 
 
@@ -24,7 +27,7 @@ def test_print_popped_another_node_dequeue(pseudoqueue):
     pseudoqueue.dequeue()
 
     actual = pseudoqueue.dequeue()
-    expected = "Yahia"
+    expected = "yahia"
     assert actual == expected
 
 
@@ -39,12 +42,8 @@ def test_is_empty_stack2():
 def pseudoqueue():
     pseudoqueue = PseudoQueue()
 
-    bat = Node("Bat")
-    yahia = Node("Yahia")
-    btoush = Node("Btoush")
-
-    pseudoqueue.enqueue(btoush)
-    pseudoqueue.enqueue(yahia)
-    pseudoqueue.enqueue(bat)
+    pseudoqueue.enqueue("btoush")
+    pseudoqueue.enqueue("yahia")
+    pseudoqueue.enqueue("bat")
 
     return pseudoqueue

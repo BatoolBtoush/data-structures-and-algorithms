@@ -122,12 +122,10 @@ class PseudoQueue:
 
         # if stack 1 is not empty, then empty its componenents into stack 2 by pushing them
         # and after that, push into stack 1 the node normally
-        
-        
+
         while not self.stack1.is_empty():
             self.stack2.push(self.stack1.pop())
         self.stack1.push(node)
-        
 
         # now get back all the elements from stack 2 into stack 1
         while not self.stack2.is_empty():
@@ -147,17 +145,6 @@ class PseudoQueue:
 
 
 if __name__ == "__main__":
-    # stac = Stack()
-    # creating nodes
-    # bat = Node("Bat")
-    # yahia = Node("Yahia")
-    # btoush = Node("Btoush")
-    # stac.push(btoush)
-    # stac.push(yahia)
-    # stac.push(bat)
-    # print(stac.length())
-
-    ###################################################################################################
 
     pseudoqueue = PseudoQueue()
     pseudoqueue.enqueue("btoush")
@@ -167,8 +154,4 @@ if __name__ == "__main__":
     print(pseudoqueue.stack1.top)
     print(pseudoqueue.stack2.top)
     print(pseudoqueue.dequeue())
-
-      
-    # # print(pseudoqueue.dequeue())
-    # # print(pseudoqueue.__str__())
-    # print(pseudoqueue.deQueue())
+    print(pseudoqueue.dequeue())
