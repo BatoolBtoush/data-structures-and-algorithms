@@ -97,14 +97,14 @@ It's done by comparing the node we're looking for to the tree's or sub-tree. We 
 
 ## **API**
 
-- Pre-order: traverses throguht the tree in this way:
+- **Pre-order:** traverses throguht the tree in this way:
     root >> left >> right
 
     and output a list of the nodes in the tree
 
 <br>
 
-- In-order: traverses throguht the tree in this way:
+- **In-order:** traverses throguht the tree in this way:
 
     left >> root >> right
 
@@ -112,7 +112,7 @@ It's done by comparing the node we're looking for to the tree's or sub-tree. We 
 
 <br>
 
-- Post-order: traverses throguht the tree in this way:
+- **Post-order:** traverses throguht the tree in this way:
 
     left >> right >> root
 
@@ -120,8 +120,8 @@ It's done by comparing the node we're looking for to the tree's or sub-tree. We 
 
 <br>
 
-- add: adds a new node into the binary tree
+- **add:** adds a new node into the binary tree, depending on whether it's greater or less than the self.root or the current node I'm looking at.
 
 <br>
 
-- contains: returns a boolean indicating whether or not the value is in the tree at least once.
+- **contains:** returns a boolean indicating whether or not the value is in the tree at least once.
