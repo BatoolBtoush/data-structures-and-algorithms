@@ -1,4 +1,8 @@
 class TreeNode:
+    """
+    Class for initializing a tree nodes.
+    Each node has a value and almost everyone of which has a left and a right child.
+    """
     def __init__(self, value):
         self.value = value
         self.right = None
@@ -12,6 +16,15 @@ class TreeNode:
 
 
 class BinaryTree:
+    """"
+    Class for initializing a binary tree with nodes, which are linked to each other.
+    The root node is the first node in the point of access to the tree.
+
+    Class methods:
+    - pre_order() - returns a list of values in pre-order traversal (root, left, right)
+    - in_order() - returns a list of values in in-order traversal (left, root, right)
+    - post_order() - returns a list of values in post-order traversal (left, right, root)
+    """
     def __init__(self):
         self.root = None
 
@@ -79,6 +92,19 @@ class BinaryTree:
 
 
 class BinarySearch(BinaryTree):
+    """
+    Class that is a child-class of the Binary Tree Class.
+
+    The special characteristics of the Binary Search Tree are:
+    - The left child of a node is always less than the parent(root) node.
+    - The right child of a node is always greater than the parent(root) node.
+    
+    
+    Class methods:
+    - add() - adds a node to the tree, according to the Binary Search Tree rules.
+    - contains() - checks if a node is in the tree. Returns True if it exists or False if it doesn't.
+    
+    """
     def add(self, value):
 
         if self.root is None:
