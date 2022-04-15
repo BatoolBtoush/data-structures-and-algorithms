@@ -1,4 +1,8 @@
 class TreeNode:
+    """
+    Class for initializing a tree nodes.
+    Each node has a value and almost everyone of which has a left and a right child.
+    """
     def __init__(self, value):
         self.value = value
         self.right = None
@@ -12,6 +16,15 @@ class TreeNode:
 
 
 class BinaryTree:
+    """"
+    Class for initializing a binary tree with nodes, which are linked to each other.
+    The root node is the first node in the point of access to the tree.
+    Class methods:
+    - pre_order() - returns a list of values in pre-order traversal (root, left, right)
+    - in_order() - returns a list of values in in-order traversal (left, root, right)
+    - post_order() - returns a list of values in post-order traversal (left, right, root)
+    - tree_max() - returns the maximum value in the tree
+    """
     def __init__(self):
         self.root = None
 
