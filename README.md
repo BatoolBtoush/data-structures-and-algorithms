@@ -17,4 +17,7 @@
 - [Class 13: Stack Queue Brackets](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/stack-queue-brackets/stack-queue-brackets/README.md)
 - [Class 14: Mock Interviews, Max Stack](https://docs.google.com/spreadsheets/d/1zIoLHAcLFRrrLyXAw9YCAvDWZ6jiCI0dCpIKJeQd4SY/edit#gid=0)
 - [Class 15: Binary Trees and BST Implementation](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/trees/binary-tree/README.md)
+- [Class 16: Find the Maximum Value in a Binary Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-max/tree-max/README.md)
+- [Class 17: Breadth-first Traversal.](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-breadth-first/breadth-first/README.md)
+- 
 
