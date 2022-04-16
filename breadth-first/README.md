@@ -1,23 +1,25 @@
 # **Challenge Summary**
 
-You're asked to write a function called breadth_first that takes an arguments of the binary tree and returns a list of all values in the tree, in the order they were encountered
+You're asked to write a function called breadth_first that takes an arguments of the binary tree and returns a list of all values in the tree, in the order they were encountered.
+
+Keeping in mind that Breadth first traversal iterates through the tree by going through each level of the tree node-by-node.
 
 
 <br>
 
 ## **Whiteboard Process**
-<!-- Embedded whiteboard image -->
+![breadth first whiteboard 1](assets/breadth-first-1.jpg)
+![breadth first whiteboard](assets/breadth-first-2.jpg)
+
 
 <br>
 
 ## **Approach & Efficiency**
+
 ***Approach:***
-- Create an empty queue
-- Start from root and appeand it into the queue
-- Loop while root is not TRUE:
-    b) Enqueue root’s children into the queue
-      starting from left to right children
-    c) Dequeue a node from the queue
+
+Uses a queue (instead of the call stack via recursion) to traverse the width/breadth of the tree. 
+  
 
 ***Big O:***
 
@@ -25,3 +27,5 @@ You're asked to write a function called breadth_first that takes an arguments of
 - Space Complexity: O(n) 
 
 ## **Solution**
+
+The solution is in ***breadth_first.py*** file and the test cases are in ***test_breadth_first.py***
