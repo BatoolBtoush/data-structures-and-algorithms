@@ -1,4 +1,3 @@
-
 # data-structures-and-algorithms
 
 ## ***Code Challenges***
@@ -19,3 +18,4 @@
 - [Class 15: Binary Trees and BST Implementation](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/trees/binary-tree/README.md)
 - [Class 16: Find the Maximum Value in a Binary Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-max/tree-max/README.md)
 - [Class 17: Breadth-first Traversal.](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-breadth-first/breadth-first/README.md)
+
