@@ -19,5 +19,5 @@
 - [Class 16: Find the Maximum Value in a Binary Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-max/tree-max/README.md)
 - [Class 17: Breadth-first Traversal.](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-breadth-first/breadth-first/README.md)
 - [Class 18: Fizz Buzz k-ary Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-fizz-buzz/fizz-buzz/README.md)
-- [Class 19: Sum of Odd Numbers In A Binary Search Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/sum-of-odd/sum-odd-binary/README.md)
+- [Class 19: Mock Interview - Sum of Odd Numbers In A Binary Search Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/sum-of-odd/sum-odd-binary/README.md)
 
