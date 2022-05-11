@@ -231,14 +231,12 @@ class BinarySearch(BinaryTree):
         """
         Returns the sum of all the odd nodes in the tree using the pre-order traversal.
         """
-        stack = []
         sum = 0
         if self.root is None:
             raise Exception("Tree is empty")
 
         def _walk(root):
             nonlocal sum
-            stack.append(root.value)
             if root.value % 2 != 0:
                 sum += root.value
             if root.left:
@@ -275,7 +273,6 @@ def sum_of_odd_numbers_breadth_first_traversal(tree):
     """
     Returns the sum of all the odd nodes in the tree using the breadth-first traversal.
     """
-    output = []
     sum = 0
     queue = Queue()
     queue.enqueue(tree.root)
@@ -287,7 +284,6 @@ def sum_of_odd_numbers_breadth_first_traversal(tree):
         dequeued = queue.dequeue()
 
         if dequeued:
-            output.append(dequeued.value)
             if dequeued.value % 2 != 0:
                 sum += dequeued.value
 
@@ -320,7 +316,6 @@ if __name__ == "__main__":
     # print("Post Order traversal BT: ", BT.post_order())
     # print("Breadth First traversal BT: ", breadth_first(BT))
 
-
     # ********************************************************************************************
     BTS = BinarySearch()
     a = TreeNode(13)
@@ -331,7 +326,7 @@ if __name__ == "__main__":
     BTS.add(10)
     BTS.add(5)
     BTS.add(97)
-    BTS.add(100)
+    BTS.add(101)
     BTS.add(200)
     BTS.add(6)
     print("Pre Order traversal BTS: ", BTS.pre_order())
@@ -339,5 +334,11 @@ if __name__ == "__main__":
     print("Post Order traversal BTS: ", BTS.post_order())
     print("Breadth First traversal BTS: ", breadth_first(BTS))
     print("Does it contain: ", BTS.contains(9))
-    print("Summation of odd numbers using pre order: ", BTS.sum_of_odd_numbers_pre_order_traversal())
-    print("Summation of odd numbers using breadth first: ", sum_of_odd_numbers_breadth_first_traversal(BTS))
+    print(
+        "Summation of odd numbers using pre order: ",
+        BTS.sum_of_odd_numbers_pre_order_traversal(),
+    )
+    print(
+        "Summation of odd numbers using breadth first: ",
+        sum_of_odd_numbers_breadth_first_traversal(BTS),
+    )
