@@ -318,17 +318,30 @@ if __name__ == "__main__":
 
     # ********************************************************************************************
     BTS = BinarySearch()
-    a = TreeNode(13)
+    # a = TreeNode(13)
+    # BTS.root = a
+    # BTS.add(12)
+    # BTS.add(21)
+    # BTS.add(3)
+    # BTS.add(10)
+    # BTS.add(5)
+    # BTS.add(97)
+    # BTS.add(101)
+    # BTS.add(200)
+    # BTS.add(6)
+
+    a = TreeNode(8)
     BTS.root = a
-    BTS.add(12)
-    BTS.add(21)
     BTS.add(3)
-    BTS.add(10)
-    BTS.add(5)
-    BTS.add(97)
-    BTS.add(101)
-    BTS.add(200)
+    BTS.add(1)
     BTS.add(6)
+    BTS.add(4)
+    BTS.add(7)
+    BTS.add(10)
+    BTS.add(14)
+    BTS.add(13)
+
+    
     print("Pre Order traversal BTS: ", BTS.pre_order())
     print("In Order traversal BTS: ", BTS.in_order())
     print("Post Order traversal BTS: ", BTS.post_order())

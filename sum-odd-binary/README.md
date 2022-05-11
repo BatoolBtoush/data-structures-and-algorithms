@@ -21,7 +21,7 @@ You're asked to find the sum of all the odd numbers in a binary search tree, eit
 The approach was using both the depth and breadth first traversal.
 
 - The depth first traversal(pre order ) is of Big O:
-    - Time Complexity: O(n)
+    - Time Complexity: O(n^2)
     - Space Complexity: O(Log n)
 
 - The breadth first traversal(in order) is of Big O:
