@@ -1,4 +1,4 @@
-class HashaTable(object):
+class HashTable(object):
     def __init__(self, size=1024):
 
         self.size = size
@@ -38,7 +38,7 @@ class HashaTable(object):
             # if so, update the value for that key to the value provided in the method's parameter
             for i in range(len(self.map[index])):
                 if self.map[index][i][0] == key:
-                    self.map[index][i] = [key, value]
+                    self.map[index][i][1] = value
                     return
             self.map[index].append([key, value])
 
@@ -47,7 +47,29 @@ class HashaTable(object):
         This method takes a type string (key) and returns the value associated with that key.
         """
         index = self.hash(key)
-        return self.map[index][0][1]
+        if self.map[index] is None:
+            return None
+        else:
+            for i in range(len(self.map[index])):
+                if self.map[index][i][0] == key:
+                    return self.map[index][i][1]
+            return None
+
+
+    # def remove(self, key):
+    #     """
+    #     This method takes a type string (key) and removes the key-value pair from the table.
+    #     """
+    #     index = self.hash(key)
+    #     if self.map[index] is None:
+    #         return None
+    #     else:
+    #         for i in range(len(self.map[index])):
+    #             if self.map[index][i][0] == key:
+    #                 self.map[index].pop(i)
+    #                 return
+    #         return None
+
 
     def contains(self, key):
         """
@@ -77,11 +99,12 @@ class HashaTable(object):
 
 
 if __name__ == "__main__":
-    hashtable = HashaTable()
+    hashtable = HashTable()
 
-    hashtable.set("name", "Batool Ragayah ")  # 755
+    hashtable.set("name", "Batool Ragayah")  # 755
     hashtable.set("batool", "ragayah")  # 915
     hashtable.set("course", "js")  # 195
+    hashtable.set("course", ".net")  # 195
     hashtable.set("course", "Python")  # 195
 
     hashtable.set("abcdef", "1")  # 79
@@ -91,22 +114,24 @@ if __name__ == "__main__":
 
 
     print(hashtable.get("name"))  # "Ragayah Batool"
+    print(hashtable.get("batool"))  # "ragayah"
+    print(hashtable.get("course"))  # "Python"
+    print(hashtable.get("abcdef"))  # "1"
+    print(hashtable.get("bcdefa"))  # "2"
+    print(hashtable.get("cdefab"))  # "3"
+    print(hashtable.get("defabc"))  # "4"
 
 
     print(hashtable.contains("name"))  # True
     print(hashtable.contains("batool"))  # True
-    print(hashtable.contains("python"))  # True
+    print(hashtable.contains("Python"))  # False
 
 
     print(hashtable.keys())  # ['name', 'batool', 'course', 'abcdef', 'bcdefa', 'cdefab', 'defabc']
 
 
 
-
-
-
-
-# # for printing
+# for printing
 # for item in enumerate(hashtable.map):
 #     if item is not None:
 #         print(item)
