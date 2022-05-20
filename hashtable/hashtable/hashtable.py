@@ -55,22 +55,6 @@ class HashTable(object):
                     return self.map[index][i][1]
             return None
 
-
-    # def remove(self, key):
-    #     """
-    #     This method takes a type string (key) and removes the key-value pair from the table.
-    #     """
-    #     index = self.hash(key)
-    #     if self.map[index] is None:
-    #         return None
-    #     else:
-    #         for i in range(len(self.map[index])):
-    #             if self.map[index][i][0] == key:
-    #                 self.map[index].pop(i)
-    #                 return
-    #         return None
-
-
     def contains(self, key):
         """
         This method takes a type string (key) and returns a Boolean:
@@ -95,7 +79,6 @@ class HashTable(object):
                 for j in range(len(self.map[i])):
                     keys.append(self.map[i][j][0])
         return keys
-        
 
 
 if __name__ == "__main__":
@@ -112,7 +95,6 @@ if __name__ == "__main__":
     hashtable.set("cdefab", "3")  # 79
     hashtable.set("defabc", "4")  # 79
 
-
     print(hashtable.get("name"))  # "Ragayah Batool"
     print(hashtable.get("batool"))  # "ragayah"
     print(hashtable.get("course"))  # "Python"
@@ -121,14 +103,13 @@ if __name__ == "__main__":
     print(hashtable.get("cdefab"))  # "3"
     print(hashtable.get("defabc"))  # "4"
 
-
     print(hashtable.contains("name"))  # True
     print(hashtable.contains("batool"))  # True
     print(hashtable.contains("Python"))  # False
 
-
-    print(hashtable.keys())  # ['name', 'batool', 'course', 'abcdef', 'bcdefa', 'cdefab', 'defabc']
-
+    print(
+        hashtable.keys()
+    )  # ['name', 'batool', 'course', 'abcdef', 'bcdefa', 'cdefab', 'defabc']
 
 
 # for printing
