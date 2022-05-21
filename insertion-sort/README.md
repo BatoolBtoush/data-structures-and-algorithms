@@ -3,6 +3,12 @@ Write a function **insertion_sort()** that takes in an unsorted array of integer
 
 <br>
 
+## **Whiteboard Process**
+
+![whiteboard sort 2](assets/whiteboard-sort-2.jpg)
+![whiteboard sort 1](assets/whiteboard-sort-1.jpg)
+
+<br>
 
 ## **Approach & Efficiency**
 
