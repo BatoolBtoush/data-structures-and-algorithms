@@ -34,3 +34,12 @@ The space complexity is of O(1). That's because in insertion sort, an extra vari
 ## **Solution**
 
 The solution is found in the file `insertion_sort.py`.
+
+<br>
+
+
+## **Blogs**
+
+Hashnode: [Sorting Algorithms: Insertion Sort](https://batoolragayah.hashnode.dev/sorting-algorithms-insertion-sort)
+
+README.md: [BLOG.md](blog.md)
