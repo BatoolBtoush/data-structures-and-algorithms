@@ -20,4 +20,6 @@
 - [Class 17: Breadth-first Traversal.](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-breadth-first/breadth-first/README.md)
 - [Class 18: Fizz Buzz k-ary Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/tree-fizz-buzz/fizz-buzz/README.md)
 - [Class 19: Mock Interview - Sum of Odd Numbers In A Binary Search Tree](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/sum-of-odd/sum-odd-binary/README.md)
-
+- [Class 26: Insertion Sort](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/main/insertion-sort/README.md)
+- [Class 27: Merge Sort](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/merge-sort/merge-sort/README.md)
+- [Class 30: Implementation: Hash Tables](https://github.com/BatoolBtoush/data-structures-and-algorithms/blob/hashtable/hashtable/README.md)
