@@ -32,7 +32,7 @@ To sum it up in bullet-points, the importance of sorting algorithms are:
 7. Radix Sort
 8. Bucket Sort
 
-In this article, I'm going to be explaining **Merge Sort**
+In this article, I'm going to be explaining **Merge Sort** after I have explained [Insertion Sort](https://batoolragayah.hashnode.dev/sorting-algorithms-insertion-sort) before.
 
 <br>
 
@@ -66,10 +66,133 @@ The steps to the divide and conquer algorithm could be summarized in the followi
 
 After defining the divide and conquer algorithm, it is important to mention how identical the procedure is for the both of them. 
 
-As the merge sort algorithm ***divides*** the given array/list into two halves, ***calls itself*** for the two halves and then ***merges*** the two sorted halves. Noting that, prior to the final merge of the sorted two halves, the initial two sub-lists are **divided** again and again into halves until the list cannot be divided any further. Then we combine the pair of one element lists into two-element lists, sorting them in the process. The sorted two-element pairs is merged into the four-element lists, and so on until we get the sorted list.
+As the merge sort algorithm ***divides*** the given array/list into two halves, ***calls itself*** for the two halves and then ***merges*** the two sorted halves. Noting that, prior to the final merge of the sorted two halves, the initial two sub-lists are **divided** again and again into halves until the list cannot be divided any further. 
 
-
-
+<br>
 
 ## Algorithm
+
+1. Declare two functions; ***merge_sort()*** that is mainly responsible for splitting the main array into halves then later on, merges them by calling the other function; ***merge()***, which does the comparison of each sub-list element in each half to make sure to sort out those elements into their correct place.
+
+2. In ***merge_sort()***, declare a variable to store the length of the list. Create an if statement, that if the length is greater than one, then "halve" the array into left and right.
+
+3. Call  ***merge_sort()*** on each half (left and right) until they can no longer be halved, if so, call ***merge()*** on the the left, right and the array of that sub problem to sort it.
+
+4. Inside ***merge()***, declare variables for indices in the left, right and the main array, to compare the values if they're greater or smaller and based on that comparison sort the elements in each sub-list until we get to the main list.
+
+5. The latter can be done by declaring while loops and if/else statements.
+
+6. Return the new array.
+
+<br>
+
+## Visualization of Merge Sort
+
+As can be seen in the image below, this is how ***Merge Sort*** works, keeping in mind that because of the use of recursion we would always strive to reach a base case to stop the function calling, and in this algorithm the base case is; when the sub-list could no longer be halved.
+
+![merge-sort-visual.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1653579028926/PV4-o1mFn.jpg align="left")
+
+<br>
+
+## Pseudocode
+
+```
+ALGORITHM Mergesort(arr)
+    DECLARE n <-- arr.length
+
+    if n > 1
+      DECLARE mid <-- n/2
+      DECLARE left <-- arr[0...mid]
+      DECLARE right <-- arr[mid...n]
+      // sort the left side
+      Mergesort(left)
+      // sort the right side
+      Mergesort(right)
+      // merge the sorted left and right sides together
+      Merge(left, right, arr)
+   
+   RETURN arr
+
+ALGORITHM Merge(left, right, arr)
+    DECLARE i <-- 0
+    DECLARE j <-- 0
+    DECLARE k <-- 0
+
+    while i < left.length && j < right.length
+        if left[i] <= right[j]
+            arr[k] <-- left[i]
+            i <-- i + 1
+        else
+            arr[k] <-- right[j]
+            j <-- j + 1
+
+        k <-- k + 1
+
+    if i = left.length
+       set remaining entries in arr to remaining values in right
+    else
+       set remaining entries in arr to remaining values in left
+
+    RETURN arr
+``` 
+
+<br>
+
+## Python Code Implementation
+
+```
+def merge_sort(array):
+    length = len(array)
+    if length > 1:
+        mid = length // 2
+        left = array[:mid]
+        right = array[mid:]
+        merge_sort(left)
+        merge_sort(right)
+        merge(left, right, array)
+    return array
+
+
+def merge(left, right, array):
+    i = 0
+    j = 0
+    k = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            array[k] = left[i]
+            i += 1
+        else:
+            array[k] = right[j]
+            j += 1
+        k += 1
+
+    if i == len(left):
+        array[k:] = right[j:]
+    else:
+        array[k:] = left[i:]
+
+    return array
+``` 
+
+<br>
+
+## Efficiency And Big(O) Notation
+
+**Big(O) Notation** is used to describe the efficiency of an algorithm or function. This efficiency is evaluated based on 2 factors:
+
+- **Running Time (Time Complexity):** Which explains the amount of time a function or an algorithm needs to complete.
+
+- **Memory Space (Space Complexity):** Explains the amount of memory resources a function or an algorithm uses to store data.
+
+In order to analyze the above limiting factors, we should consider 4 key areas for analysis, which are:
+
+1. Input Size
+2. Units of Measurement
+3. Orders of Growth
+4. Best Case, Average Case, and Worst Case
+
+Thus, the efficiency of any sorting algorithm is determined by the time and space complexities of the algorithm. And with merge sort it's no different, and they go as follows:
+
+
+
 

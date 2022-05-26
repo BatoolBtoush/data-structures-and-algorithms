@@ -1,41 +1,36 @@
-def merge_sort(arr):
-    n = len(arr)
-    if n > 1:
-        mid = int(n / 2)
-        left = arr[:mid]
-        right = arr[mid:n]
+def merge_sort(array):
+    length = len(array)
+    if length > 1:
+        mid = length // 2
+        left = array[:mid]
+        right = array[mid:]
         merge_sort(left)
         merge_sort(right)
-        merge(left, right, arr)
-    return arr
+        merge(left, right, array)
+    return array
 
 
-def merge(left, right, arr):
+def merge(left, right, array):
     i = 0
     j = 0
     k = 0
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
-            arr[k] = left[i]
+            array[k] = left[i]
             i += 1
         else:
-            arr[k] = right[j]
+            array[k] = right[j]
             j += 1
         k += 1
 
-    while i < len(left):
-        arr[k] = left[i]
-        i += 1
-        k += 1
+    if i == len(left):
+        array[k:] = right[j:]
+    else:
+        array[k:] = left[i:]
 
-    while j < len(right):
-        arr[k] = right[j]
-        j += 1
-        k += 1
+    return array
 
 
 if __name__ == "__main__":
-    print(merge_sort([8, 4, 23, 42, 16, 15]))
-    print(merge_sort([20, 18, 12, 8, 5, -2]))
-    print(merge_sort([5, 12, 7, 5, 5, 7]))
-    print(merge_sort([2, 3, 5, 7, 13, 11]))
+    array = [8, 4, 23, 42, 16, 15]
+    print(merge_sort(array))
