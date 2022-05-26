@@ -14,8 +14,7 @@ merge(left, right, array)
 ## **Whiteboard Process**
 
 ![White board](assets/merge-sort-whiteboard.jpg)
-![White board](assets/merge-sort-visual.jpg)
-
+![White board](assets/mergesort11.jpg)
 <br>
 
 

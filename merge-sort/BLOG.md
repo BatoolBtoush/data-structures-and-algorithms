@@ -99,11 +99,63 @@ As the merge sort algorithm ***divides*** the given array/list into two halves, 
 <br>
 
 ## **Visualization of Merge Sort**
+As can be seen in the images below, this is how Merge Sort works, keeping in mind that because of the use of recursion we would always strive to reach a base case to stop the function calling, and in this algorithm the base case is; when the sub-list could no longer be halved.
 
-As can be seen in the image below, this is how ***Merge Sort*** works, keeping in mind that because of the use of recursion we would always strive to reach a base case to stop the function calling, and in this algorithm the base case is; when the sub-list could no longer be halved.
+Starting with giving the merge_sort() function the main array of [8, 4, 23, 42, 16, 15]:
 
-![merge-sort-visual.jpg](assets/merge-sort-visual.jpg)
+![mergesort1.jpg](assets/mergesort1.jpg)
 
+Which in return would halve it into two sub-arrays; left [8, 4, 23] and right [42, 16, 15]:
+
+![mergesort2.jpg](assets/mergesort2.jpg)
+
+Then, the left and right sub-arrays would be halved again, and the process would continue until the sub-lists could no longer be halved.
+
+And because we're using recursion, we'd continue to call merge_sort() function on each half, beginning with the left half sub-array [8, 4, 23], resulting in two new halves:
+
+![mergesort3.jpg](assets/mergesort3.jpg)
+
+Again, we'd call the merge_sort() function on the new halves, but since the left half [8] is a base case (can't be halved), then we'd focus on the right half [4, 23], which in return would also be halved into:
+
+![mergesort4.jpg](assets/mergesort4.jpg)
+
+Now, that the sub-array of [4, 23], has reached a base case for the two halves, we'd call the merge() function to take the sub-array [4, 23], the left [4], and right halves [23], to merge them together, each element in its correct place:
+
+![mergesort5.jpg](assets/mergesort5.jpg)
+
+After, the whole right side [4, 23] of the sub-array [8, 4, 23] is sorted into [4, 23]. We'd call the merge() function to take both the sub-array [8, 4, 23], the left [8], and the sorted right [4, 23], to also merge each element in its correct place:
+
+![mergesort6.jpg](assets/mergesort6.jpg)
+
+
+The previous image shows the latest, merged and sorted left sub-array; [4, 8, 23] of the main array. And since the whole left side is completed, we'd move on to the right side, following the recursion approach:
+
+Where we would call the merge_sort() function on the right half [42, 16, 15] to break it into two sub-arrays:
+
+![mergesort7.jpg](assets/mergesort7.jpg)
+
+
+After which, we'd call the merge_sort() function on the two new halves, but since the left half [42] is a base case (can't be halved), then let's focus on the right half [16, 15], which in return would also be halved into:
+
+![mergesort8.jpg](assets/mergesort8.jpg)
+
+
+Now, that the sub-array of [16, 15], has reached a base case for the two halves, we'd call the merge() function to take the sub-array [16, 15], the left [16], and right halves [15], to merge them together, each element in its correct place:
+
+![mergesort9.jpg](assets/mergesort9.jpg)
+
+And as can be seen above, the right side [16, 15] of the sub-array [42, 16, 15] is sorted into [15, 16]. So we'd now call the merge() function to take both the sub-array [42, 16, 15], the left [42], and the sorted right [15, 16], to also merge each element in its correct place:
+
+![mergesort10.jpg](assets/mergesort10.jpg)
+
+Resulting in, the right side being sorted into: [15, 16, 42]
+
+And lastly, since both the left half [4, 8, 23] and the right half [15, 16, 42] are sorted individually. Then we'd call the merge() function on the main array [8, 4, 23, 42, 16, 15] and the now sorted halves:
+
+![mergesort11.jpg](assets/mergesort11.jpg)
+
+
+Which return the fully sorted and merged array; [4, 8, 15, 16, 23, 42]
 <br>
 
 ## **Pseudocode**
