@@ -1,3 +1,6 @@
+import string
+
+
 class HashTable(object):
     def __init__(self, size=1024):
 
@@ -81,52 +84,47 @@ class HashTable(object):
         return keys
 
 
-def repeated_word(text):
+def first_repeated(string):
     """
-    This function takes a string and it finds the first repeated word to occur more than once in a string    
+    This method takes a string as an argument and returns the first word that occurs more than once in the string.
     """
-    # create a hash table
-    table = HashTable()
-    lis = []
-    # split the string into words
-    words = text.split()
-    # loop through the words
-    for word in words:
-        # check if the word is in the table
-        if table.contains(word):
-            # if so, add the word to the list
-            lis.append(word)
-            if len(lis) > 1:
-                return lis[0]
+    hashtable = HashTable()
+    first_repeated = ""
+    # print(string)
+    lowered = string.lower()
+    # print(lowered)
+    replaced = (
+        lowered.replace(".", " ").replace(",", " ").replace("!", " ").replace("?", " ")
+    )
+    # print(replaced)
+    splitted = replaced.split()
+    # print(splitted)
+    for word in splitted:
+        if hashtable.contains(word):
+            if first_repeated == "":
+                first_repeated = word
+                # for item in enumerate(hashtable.map):
+                #     if item is not None:
+                #         print(item)
+            return first_repeated
         else:
-            # if not, add the word to the table
-            table.set(word, word)
-    # if no word is found, return None
-    return None
+            hashtable.set(word, None)
 
 
 if __name__ == "__main__":
     hashtable = HashTable()
 
-    hashtable.set("name", "Batool Ragayah")  # 755
-    hashtable.set("batool", "ragayah")  # 915
-    hashtable.set("course", "js")  # 195
-    hashtable.set("course", ".net")  # 195
-    hashtable.set("course", "Python")  # 195
-
-    hashtable.set("abcdef", "1")  # 79
-    hashtable.set("bcdefa", "2")  # 79
-    hashtable.set("cdefab", "3")  # 79
-    hashtable.set("defabc", "4")  # 79
-
-    print(repeated_word("Once upon a time, there was a brave princess who..."))
+    print(first_repeated("Once upon a time, there was a brave princess who..."))
     print(
-        repeated_word(
+        first_repeated(
             "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
         )
     )
     print(
-        repeated_word(
+        first_repeated(
             "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
         )
     )
+
+    print(first_repeated("first nice! blah first, whatever blah nice whatever.."))
+    print(first_repeated("nice cool?? nice blah cool whatever blah nice.. whatever"))
