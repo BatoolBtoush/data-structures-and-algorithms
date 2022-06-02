@@ -84,12 +84,12 @@ class HashTable(object):
         return keys
 
 
-def first_repeated(string):
+def repeated_word(string):
     """
     This method takes a string as an argument and returns the first word that occurs more than once in the string.
     """
     hashtable = HashTable()
-    first_repeated = ""
+    first_repeated_word = ""
     # print(string)
     lowered = string.lower()
     # print(lowered)
@@ -101,12 +101,12 @@ def first_repeated(string):
     # print(splitted)
     for word in splitted:
         if hashtable.contains(word):
-            if first_repeated == "":
-                first_repeated = word
+            if first_repeated_word == "":
+                first_repeated_word = word
                 # for item in enumerate(hashtable.map):
                 #     if item is not None:
                 #         print(item)
-            return first_repeated
+            return first_repeated_word
         else:
             hashtable.set(word, None)
 
@@ -114,17 +114,17 @@ def first_repeated(string):
 if __name__ == "__main__":
     hashtable = HashTable()
 
-    print(first_repeated("Once upon a time, there was a brave princess who..."))
+    print(repeated_word("Once upon a time, there was a brave princess who..."))
     print(
-        first_repeated(
+        repeated_word(
             "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
         )
     )
     print(
-        first_repeated(
+        repeated_word(
             "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
         )
     )
 
-    print(first_repeated("first nice! blah first, whatever blah nice whatever.."))
-    print(first_repeated("nice cool?? nice blah cool whatever blah nice.. whatever"))
+    print(repeated_word("first nice! blah first, whatever blah nice whatever.."))
+    print(repeated_word("nice cool?? nice blah cool whatever blah nice.. whatever"))

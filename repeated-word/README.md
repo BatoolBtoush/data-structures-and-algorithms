@@ -7,7 +7,7 @@ You're asked to write a function called repeated_word() that finds the first wor
 <br>
 
 ## **Whiteboard Process**
-![first_repeated_word](assets/first-repeated.jpg)
+![first_repeated_word](assets/repeated_word.jpg)
 
 <br>
 
