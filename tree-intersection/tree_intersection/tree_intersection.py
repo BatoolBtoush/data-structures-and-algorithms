@@ -177,15 +177,22 @@ def tree_intersection(tree1, tree2):
     This method takes two arguments:
     1. A binary tree (tree1)
     2. A binary tree (tree2)
-
-    This method does the following tasks:
-    - Create a Hashmap to store the values of the first tree
-    - Create a Hashmap to store the values of the second tree
-    - Iterate through the first tree and check if the value exists in the second tree
-    - If it does, add it to a set
-    - Return the set
+    and returns a list of values that are in both trees.
     """
-    pass
+    hashtable = HashTable()
+    empty = []
+    tree1_values = tree1.pre_order()
+    tree2_values = tree2.pre_order()
+
+    if tree1.root is None or tree2.root is None:
+        raise Exception("Tree is empty")
+
+    for value in tree1_values:
+        hashtable.set(str(value), None)
+    for value in tree2_values:
+        if hashtable.contains(str(value)):
+            empty.append(value)
+    return empty
 
 
 if __name__ == "__main__":
@@ -193,32 +200,28 @@ if __name__ == "__main__":
     tree1 = BinaryTree()
     tree2 = BinaryTree()
 
-    tree1.root = TreeNode(1)
-    tree1.root.left = TreeNode(2)
-    tree1.root.right = TreeNode(3)
-    tree1.root.left.left = TreeNode(4)
-    tree1.root.left.right = TreeNode(5)
-    tree1.root.right.left = TreeNode(6)
-    tree1.root.right.right = TreeNode(7)
+    tree1.root = TreeNode(150)
+    tree1.root.left = TreeNode(100)
+    tree1.root.right = TreeNode(250)
+    tree1.root.left.left = TreeNode(75)
+    tree1.root.left.right = TreeNode(160)
+    tree1.root.left.right.left = TreeNode(125)
+    tree1.root.left.right.right = TreeNode(175)
+    tree1.root.right.left = TreeNode(200)
+    tree1.root.right.right = TreeNode(350)
+    tree1.root.right.right.left = TreeNode(300)
+    tree1.root.right.right.right = TreeNode(500)
 
-    tree2.root = TreeNode(1)
-    tree2.root.left = TreeNode(2)
-    tree2.root.right = TreeNode(3)
-    tree2.root.left.left = TreeNode(4)
-    tree2.root.left.right = TreeNode(5)
-    tree2.root.right.left = TreeNode(6)
-    tree2.root.right.right = TreeNode(7)
+    tree2.root = TreeNode(42)
+    tree2.root.left = TreeNode(100)
+    tree2.root.right = TreeNode(600)
+    tree2.root.left.left = TreeNode(15)
+    tree2.root.left.right = TreeNode(160)
+    tree2.root.left.right.left = TreeNode(125)
+    tree2.root.left.right.right = TreeNode(175)
+    tree2.root.right.left = TreeNode(200)
+    tree2.root.right.right = TreeNode(350)
+    tree2.root.right.right.left = TreeNode(4)
+    tree2.root.right.right.right = TreeNode(500)
 
     print(tree_intersection(tree1, tree2))
-
-
-    hashtable.set("name", "Batool Ragayah")  # 755
-    hashtable.set("batool", "ragayah")  # 915
-    hashtable.set("course", "js")  # 195
-    hashtable.set("course", ".net")  # 195
-    hashtable.set("course", "Python")  # 195
-
-    hashtable.set("abcdef", "1")  # 79
-    hashtable.set("bcdefa", "2")  # 79
-    hashtable.set("cdefab", "3")  # 79
-    hashtable.set("defabc", "4")  # 79
