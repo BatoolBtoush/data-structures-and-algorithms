@@ -1,18 +1,49 @@
 from hashmap_left_join.hashmap_left_join import left_join, HashTable
 
-def test_HashTable_left_join():
-    HashTable1 = HashTable()
-    HashTable1.set('fond', 'enamored')
-    HashTable1.set('wrath', 'anger')
-    HashTable1.set('diligent', 'employed')
-    HashTable1.set('outfit', 'garb')
-    HashTable1.set('guide', 'usher')
 
-    HashTable2 = HashTable()
-    HashTable2.set('fond', 'averse')
-    HashTable2.set('wrath', 'delight')
-    HashTable2.set('diligent', 'idle')
-    HashTable2.set('guide', 'follow')
-    HashTable2.set('flow', 'jam')
+def test_hashmap_left_join():
+    hashmap1 = HashTable()
+    hashmap1.set("diligent", "employed")
+    hashmap1.set("fond", "enamored")
+    hashmap1.set("guide", "usher")
+    hashmap1.set("outfit", "garb")
+    hashmap1.set("wrath", "anger")
 
-    assert left_join(HashTable1, HashTable2) == left_join(HashTable2, HashTable1)
+    hashmap2 = HashTable()
+    hashmap2.set("diligent", "idle")
+    hashmap2.set("fond", "averse")
+    hashmap2.set("guide", "follow")
+    hashmap2.set("flow", "jam")
+    hashmap2.set("wrath", "delight")
+
+    new_hashmap = left_join(hashmap1, hashmap2)
+    actual = new_hashmap.get("diligent")
+    expected = ["employed", "idle"]
+    assert actual == expected
+
+    actual = new_hashmap.get("outfit")
+    expected = ["garb", None]
+    assert actual == expected
+
+
+def test_hashmap_left_join_2():
+    hashmap1 = HashTable()
+    hashmap1.set("light", "brightness")
+    hashmap1.set("thin", "slim")
+    hashmap1.set("right", "correct")
+    hashmap1.set("happy", "joyful")
+
+    hashmap2 = HashTable()
+    hashmap2.set("light", "darkness")
+    hashmap2.set("thin", "thick")
+    hashmap2.set("right", "wrong")
+    hashmap2.set("full", "empty")
+
+    new_hashmap = left_join(hashmap1, hashmap2)
+    actual = new_hashmap.get("light")
+    expected = ["brightness", "darkness"]
+    assert actual == expected
+
+    actual = new_hashmap.get("happy")
+    expected = ["joyful", None]
+    assert actual == expected
