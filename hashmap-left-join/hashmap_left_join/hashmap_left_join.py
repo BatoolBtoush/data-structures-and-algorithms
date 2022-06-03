@@ -101,7 +101,7 @@ def left_join(hashmap1, hashmap2):
 
     if a key in the left hashmap doesn't exist in the right one: then None should be added to the key's value in the result hashmap
     """
-    if not hashmap1 or not hashmap2:
+    if hashmap1 is None or hashmap2 is None:
         return None
 
     new_hashmap = HashTable()
@@ -153,4 +153,4 @@ if __name__ == "__main__":
     hashmap2.set("wrath", "delight")
 
     left_join(hashmap1, hashmap2)
-    # print(left_join2(hashmap1, hashmap2))
+    print(left_join2(hashmap1, hashmap2))

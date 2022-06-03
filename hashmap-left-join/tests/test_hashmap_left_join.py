@@ -47,3 +47,12 @@ def test_hashmap_left_join_2():
     actual = new_hashmap.get("happy")
     expected = ["joyful", None]
     assert actual == expected
+
+def test_empty_hashmap():
+    hashmap1 = HashTable()
+    hashmap2 = HashTable()
+
+    new_hashmap = left_join(hashmap1, hashmap2)
+    actual = new_hashmap.keys()
+    expected = []
+    assert actual == expected
