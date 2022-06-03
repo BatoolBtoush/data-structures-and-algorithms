@@ -1,4 +1,4 @@
-from tree_intersection.tree_intersection import tree_intersection, TreeNode, BinaryTree
+from tree_intersection.tree_intersection import tree_intersection, BinaryTree, TreeNode
 import pytest
 
 
@@ -96,7 +96,7 @@ def test_tree_intersection_both_trees_have_string_values():
     tree2.root = TreeNode("string value")
     tree2.root.left = TreeNode(100)
     tree2.root.right = TreeNode(600)
-    
+
     actual = tree_intersection(tree1, tree2)
     expected = ["string value", 100]
     assert actual == expected

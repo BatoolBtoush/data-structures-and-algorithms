@@ -172,6 +172,9 @@ class HashTable(object):
         return keys
 
 
+#pseudocode for tree_intersection
+
+
 def tree_intersection(tree1, tree2):
     """
     This method takes two arguments:
@@ -180,7 +183,7 @@ def tree_intersection(tree1, tree2):
     and returns a list of values that are in both trees.
     """
     hashtable = HashTable()
-    empty = []
+    result = []
     tree1_values = tree1.pre_order()
     tree2_values = tree2.pre_order()
 
@@ -191,8 +194,36 @@ def tree_intersection(tree1, tree2):
         hashtable.set(str(value), None)
     for value in tree2_values:
         if hashtable.contains(str(value)):
-            empty.append(value)
-    return empty
+            result.append(value)
+
+    for item in enumerate(hashtable.map):
+        if item is not None:
+            print(item)
+    return result
+
+
+def tree_intersection_2(tree1, tree2):
+    """
+    This function takes two arguments:
+    1. A binary tree (tree1)
+    2. A binary tree (tree2)
+    and return the keys that are in both trees.
+    
+    """
+    hashtable_tree1_tree2 = HashTable()
+    hashtable_intersections = HashTable()
+
+    tree1_values = tree1.pre_order()
+    tree2_values = tree2.pre_order()
+
+    for value in tree1_values:
+        hashtable_tree1_tree2.set(str(value), None)
+
+    for value in tree2_values:
+        if hashtable_tree1_tree2.contains(str(value)):
+            hashtable_intersections.set(str(value), None)
+
+    return hashtable_intersections.keys()
 
 
 if __name__ == "__main__":
@@ -225,3 +256,8 @@ if __name__ == "__main__":
     tree2.root.right.right.right = TreeNode(500)
 
     print(tree_intersection(tree1, tree2))
+    # print(tree_intersection_2(tree1, tree2))
+
+
+
+
