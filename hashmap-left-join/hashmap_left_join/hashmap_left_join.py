@@ -93,59 +93,64 @@ class HashTable(object):
         return keys
 
 
+# solution one
 def left_join(hashmap1, hashmap2):
     """
     This method takes two hashmaps as arguments and returns a new hashmap
     that is a left join of the two hashmaps.
 
-    if no values exist in the right hashmap, then some flavor of None should be appended to the result row.
+    if a key in the left hashmap doesn't exist in the right one: then None should be added to the key's value in the result hashmap
     """
     if not hashmap1 or not hashmap2:
         return None
 
     new_hashmap = HashTable()
     for key in hashmap1.keys():
-        new_hashmap.set(key, hashmap1.get(key))
-
-    for key in hashmap2.keys():
-        if new_hashmap.contains(key):
-            new_hashmap.set(key, new_hashmap.get(key) + ',' + hashmap2.get(key))
+        if key in hashmap2.keys():
+            new_hashmap.set(key, [hashmap1.get(key), hashmap2.get(key)])
         else:
-            new_hashmap.set(key, hashmap2.get(key))
+            new_hashmap.set(key, [hashmap1.get(key), None])
 
     for item in enumerate(new_hashmap.map):
         if item is not None:
             print(item)
 
-    
+    return new_hashmap
+
+
+# solution two
+def left_join2(hashmap1, hashmap2):
+    """
+    This function takes two hashmaps arguments and returns a new list that is a left join of the two hashmaps.
+
+    if a key in the left hashmap doesn't exist in the right one: then None should be appended to the key's value in the result list
+    """
+    if not hashmap1 or not hashmap2:
+        return None
+    result = []
+    for key in hashmap1.keys():
+        if key in hashmap2.keys():
+            result.append([key, hashmap1.get(key), hashmap2.get(key)])
+        else:
+            result.append([key, hashmap1.get(key), None])
+
+    return result
+
 
 if __name__ == "__main__":
     hashmap1 = HashTable()
-    hashmap1.set('fond', 'enamored')
-    hashmap1.set('wrath', 'anger')
-    hashmap1.set('diligent', 'employed')
-    hashmap1.set('outfit', 'garb')
-    hashmap1.set('guide', 'usher')
+    hashmap1.set("diligent", "employed")
+    hashmap1.set("fond", "enamored")
+    hashmap1.set("guide", "usher")
+    hashmap1.set("outfit", "garb")
+    hashmap1.set("wrath", "anger")
 
     hashmap2 = HashTable()
-    hashmap2.set('fond', 'averse')
-    hashmap2.set('wrath', 'delight')
-    hashmap2.set('diligent', 'idle')
-    hashmap2.set('guide', 'follow')
-    hashmap2.set('flow', 'jam')
+    hashmap2.set("diligent", "idle")
+    hashmap2.set("fond", "averse")
+    hashmap2.set("guide", "follow")
+    hashmap2.set("flow", "jam")
+    hashmap2.set("wrath", "delight")
 
     left_join(hashmap1, hashmap2)
-    # for printing
-# for item in enumerate(hashmap1.map):
-#     if item is not None:
-#         print(item)
-
-# for item in enumerate(hashmap2.map):
-#     if item is not None:
-#         print(item)
-
-
-
-
-
-
+    # print(left_join2(hashmap1, hashmap2))
