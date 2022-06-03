@@ -7,7 +7,7 @@ If no values exist in the right hashmap, then some flavor of NULL should be appe
 <br>
 
 ## **Challenge**
-Youre' asked to write a function that LEFT JOINs two hashmaps into a single data structure, it could be anything you want.
+You're asked to write a function that LEFT JOINs two hashmaps into a single data structure, it could be anything you want.
 
 
 **Input:** two hash maps
@@ -17,8 +17,14 @@ Youre' asked to write a function that LEFT JOINs two hashmaps into a single data
     - The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
 
 **Output:** return the returned data structure that holds the result.
+
 <br>
 
+## **Whiteboard Process**
+
+![eft-join](assets/left-join.jpg)
+
+<br>
 
 ## **Approach & Efficiency**
 

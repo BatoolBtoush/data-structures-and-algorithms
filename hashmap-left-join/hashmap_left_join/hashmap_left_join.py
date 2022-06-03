@@ -93,6 +93,7 @@ class HashTable(object):
         return keys
 
 
+
 # solution one
 def left_join(hashmap1, hashmap2):
     """
